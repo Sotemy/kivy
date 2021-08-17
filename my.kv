@@ -1,0 +1,77 @@
+#:kivy 2.0.0
+
+# size
+# size_hint 0.2
+
+# pos
+# pos_hint
+
+<ItemLabel@Label>:
+    font_size: '25sp'
+    halign: 'left'
+    valign: 'middle'
+    text_size: self.size
+
+<Container>:
+    rows: 3
+
+    text_input:text_input
+
+    salt: salt
+    sugar:sugar
+    nitro:nitro
+    starts:starts
+    time:time
+
+    AnchorLayout:
+        TextInput:
+            id: text_input
+            multiline: False
+            font_size:'45sp'
+            input_type: 'number'
+            input_filter: 'int'
+
+    GridLayout:
+        cols: 2
+
+        BoxLayout:
+            padding: [30, 0, 0, 0]
+            orientation: 'vertical'
+            ItemLabel:
+                text: 'Salt'
+            ItemLabel:
+                text: 'Nitro salt'
+            ItemLabel:
+                text: 'Monosugar'
+            ItemLabel:
+                text: 'Starts'
+            ItemLabel:
+                text: 'Time'
+
+        BoxLayout:
+            size_hint:0.5, 1
+            orientation: 'vertical'
+            ItemLabel:
+                id: salt
+                text: '0'
+            ItemLabel:
+                id: nitro
+                text: '0'
+            ItemLabel:
+                id: sugar
+                text: '0'
+            ItemLabel:
+                id: starts
+                text: '0'
+            ItemLabel:
+                id: time
+                text: '0'
+
+    BoxLayout:
+        size_hint:0.9, 0.5
+        padding: [30, 0, 30, 20]
+        Button:
+            text: 'Go'
+            font_size: 40
+            on_release:
+                root.calculate()
