@@ -1,12 +1,6 @@
 from kivymd.app import MDApp
 from kivy.uix.gridlayout import GridLayout
-from kivy.core.window import Window
-from kivy.config import Config
 
-# Window.size=(720, 1280)
-Window.size=(480, 720)
-
-Config.set('kivy', 'keyboard_mode', 'systemanddock')
 
 def get_ingridients(m):
     nitro=str(10 * m / 1000)
